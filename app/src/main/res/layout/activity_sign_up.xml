@@ -10,7 +10,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/osu_new"
+    android:background="@drawable/new_back"
     tools:context="com.example.tammy.test.SignUpActivity">
 
     <TextView
