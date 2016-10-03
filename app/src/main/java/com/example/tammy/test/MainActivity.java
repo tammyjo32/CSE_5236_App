@@ -46,4 +46,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void forgotPassword(View view) {
+    }
 }
