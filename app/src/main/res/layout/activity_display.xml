@@ -56,7 +56,7 @@
                 android:id="@+id/check_in_button"
                 android:layout_width="89dp"
                 android:layout_height="89dp"
-                android:src="@drawable/profile"
+                android:src="@drawable/location"
                 android:layout_centerHorizontal="true"
                 android:adjustViewBounds="true"
                 android:cropToPadding="false"
