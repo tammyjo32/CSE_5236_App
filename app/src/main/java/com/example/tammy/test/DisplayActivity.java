@@ -29,3 +29,4 @@ public class DisplayActivity extends Activity {
         layout.addView(textView);
     }
 }
+
