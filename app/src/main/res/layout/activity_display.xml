@@ -15,72 +15,68 @@
         android:paddingTop="50dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
             android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:paddingRight="40dp">
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/profile_button"
                 android:layout_width="89dp"
                 android:layout_height="89dp"
+                android:layout_gravity="center"
                 android:src="@drawable/profile"
-                android:layout_centerHorizontal="true"
                 android:adjustViewBounds="true"
                 android:cropToPadding="false"
-                android:layout_below="@+id/hlTopBar"
                 android:background="@drawable/rounded_button"
-                android:scaleType="fitXY"
-                android:onClick="profile"/>
+                android:scaleType="centerCrop"
+                android:onClick="profile" />
 
             <TextView
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:background="@drawable/rounded_text"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Profile"
+                android:text="@string/profile"
                 android:textAlignment="center"
-                android:textSize="20dp"
-                android:fontFamily="sans-serif"
+                android:textSize="20sp"
                 android:textColor="#606565"
                 />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
             android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:paddingLeft="40dp">
+            android:orientation="vertical">
 
-        <ImageButton
+            <ImageButton
                 android:id="@+id/check_in_button"
                 android:layout_width="89dp"
                 android:layout_height="89dp"
+                android:layout_gravity="center"
                 android:src="@drawable/location"
-                android:layout_centerHorizontal="true"
                 android:adjustViewBounds="true"
                 android:cropToPadding="false"
-                android:layout_below="@+id/hlTopBar"
                 android:background="@drawable/rounded_button"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 android:onClick="checkIn"/>
 
             <TextView
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:background="@drawable/rounded_text"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Check-In"
+                android:text="@string/check_in"
                 android:textAlignment="center"
-                android:textSize="20dp"
-                android:fontFamily="sans-serif"
+                android:textSize="20sp"
                 android:textColor="#606565"
                 />
 
@@ -96,66 +92,64 @@
         android:paddingTop="50dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
+            android:layout_marginRight="30dp"
             android:orientation="vertical"
-            android:paddingRight="40dp">
+            android:layout_gravity="center_vertical"
+            >
 
             <ImageButton
                 android:id="@+id/discussion_button"
                 android:layout_width="89dp"
                 android:layout_height="89dp"
+                android:layout_gravity="center"
                 android:src="@drawable/discussion"
-                android:layout_centerHorizontal="true"
                 android:adjustViewBounds="true"
                 android:cropToPadding="false"
-                android:layout_below="@+id/hlTopBar"
                 android:background="@drawable/rounded_button"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 android:onClick="discussionBoard"/>
 
             <TextView
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:background="@drawable/rounded_text"
-                android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Discussion"
+                android:layout_gravity="center"
+                android:text="@string/discussion"
                 android:textAlignment="center"
-                android:textSize="20dp"
-                android:fontFamily="sans-serif"
+                android:textSize="20sp"
                 android:textColor="#606565"
                 />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
             android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:paddingLeft="40dp">
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/help_button"
                 android:layout_width="89dp"
                 android:layout_height="89dp"
+                android:layout_gravity="center"
                 android:src="@drawable/help"
-                android:layout_centerHorizontal="true"
                 android:adjustViewBounds="true"
                 android:cropToPadding="false"
-                android:layout_below="@+id/hlTopBar"
                 android:background="@drawable/rounded_button"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 android:onClick="help"/>
 
             <TextView
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:background="@drawable/rounded_text"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Help"
@@ -177,66 +171,63 @@
         android:paddingTop="50dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
             android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:paddingRight="40dp">
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/settings_button"
                 android:layout_width="89dp"
                 android:layout_height="89dp"
                 android:src="@drawable/settings"
-                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:cropToPadding="false"
-                android:layout_below="@+id/hlTopBar"
                 android:background="@drawable/rounded_button"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 android:onClick="settings"/>
 
             <TextView
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:background="@drawable/rounded_text"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Settings"
                 android:textAlignment="center"
-                android:textSize="20dp"
-                android:fontFamily="sans-serif"
+                android:textSize="20sp"
                 android:textColor="#606565"
                 />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
             android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:paddingLeft="40dp">
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/sign_out_button"
                 android:layout_width="89dp"
-                android:layout_height="89dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:src="@drawable/signout"
-                android:layout_centerHorizontal="true"
                 android:adjustViewBounds="true"
                 android:cropToPadding="false"
-                android:layout_below="@+id/hlTopBar"
                 android:background="@drawable/rounded_button"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 android:onClick="signOut"/>
 
             <TextView
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:background="@drawable/rounded_text"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sign Out"

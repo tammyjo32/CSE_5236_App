@@ -4,4 +4,7 @@
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
     <string name="title_activity_display">DisplayActivity</string>
+    <string name="check_in">Check-In</string>
+    <string name="profile">Profile</string>
+    <string name="discussion">Discussion</string>
 </resources>
