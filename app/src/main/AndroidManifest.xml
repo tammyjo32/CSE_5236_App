@@ -22,11 +22,38 @@
             android:name=".PopUp"
             android:theme="@style/AppTheme.CustomTheme" />
 
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".CheckInActivity" />
-        <activity android:name=".DiscussionActivity" />
-        <activity android:name=".HelpActivity" />
-        <activity android:name=".SettingsActivity"></activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:parentActivityName=".DisplayActivity">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DisplayActivity"></meta-data>
+
+        </activity>
+        <activity android:name=".CheckInActivity"
+            android:parentActivityName=".DisplayActivity">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DisplayActivity"></meta-data>
+        </activity>
+        <activity android:name=".DiscussionActivity"
+            android:parentActivityName=".DisplayActivity">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DisplayActivity"></meta-data>
+        </activity>
+        <activity android:name=".HelpActivity"
+            android:parentActivityName=".DisplayActivity">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DisplayActivity"></meta-data>
+        </activity>
+        <activity android:name=".SettingsActivity"
+            android:parentActivityName=".DisplayActivity">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DisplayActivity"></meta-data>
+        </activity>
     </application>
 
 </manifest>
