@@ -55,12 +55,17 @@ public class SignUpActivity extends Activity {
             if(!pass1Str.equals(pass2Str)){
 
                 //popup message
-                Toast pass = Toast.makeText(SignUpActivity.this, "Passwords don't match!", Toast.LENGTH_SHORT);
+                Toast pass = Toast.makeText(SignUpActivity.this, "Passwords Don't Match!", Toast.LENGTH_SHORT);
                 pass.show();
             }
             else if(firstNameStr.equals("")||lastNameStr.equals("")||emailStr.equals("")||usernameStr.equals("")||pass1Str.equals("")||pass2Str.equals("")){
                 //popup message
-                Toast error = Toast.makeText(SignUpActivity.this, "Missing Required Information", Toast.LENGTH_SHORT);
+                Toast error = Toast.makeText(SignUpActivity.this, "Missing Required Information!", Toast.LENGTH_SHORT);
+                error.show();
+            }
+            else if(helper.alreadyExist(emailStr)){
+                //popup message
+                Toast error = Toast.makeText(SignUpActivity.this, "Email Already Registered!", Toast.LENGTH_SHORT);
                 error.show();
             }
             else
