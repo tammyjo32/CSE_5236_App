@@ -19,6 +19,31 @@ public class DisplayActivity extends Activity {
         setContentView(R.layout.activity_display);
     }
 
+    public void profile (View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void checkIn (View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void discussionBoard (View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void help (View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void settings (View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
     public void signOut (View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

@@ -31,7 +31,8 @@
                 android:cropToPadding="false"
                 android:layout_below="@+id/hlTopBar"
                 android:background="@drawable/rounded_button"
-                android:scaleType="fitXY" />
+                android:scaleType="fitXY"
+                android:onClick="profile"/>
 
             <TextView
                 android:paddingLeft="5dp"
@@ -66,7 +67,8 @@
                 android:cropToPadding="false"
                 android:layout_below="@+id/hlTopBar"
                 android:background="@drawable/rounded_button"
-                android:scaleType="fitXY" />
+                android:scaleType="fitXY"
+                android:onClick="checkIn"/>
 
             <TextView
                 android:paddingLeft="5dp"
@@ -110,7 +112,8 @@
                 android:cropToPadding="false"
                 android:layout_below="@+id/hlTopBar"
                 android:background="@drawable/rounded_button"
-                android:scaleType="fitXY" />
+                android:scaleType="fitXY"
+                android:onClick="discussionBoard"/>
 
             <TextView
                 android:paddingLeft="5dp"
@@ -145,7 +148,8 @@
                 android:cropToPadding="false"
                 android:layout_below="@+id/hlTopBar"
                 android:background="@drawable/rounded_button"
-                android:scaleType="fitXY" />
+                android:scaleType="fitXY"
+                android:onClick="help"/>
 
             <TextView
                 android:paddingLeft="5dp"
@@ -189,7 +193,8 @@
                 android:cropToPadding="false"
                 android:layout_below="@+id/hlTopBar"
                 android:background="@drawable/rounded_button"
-                android:scaleType="fitXY" />
+                android:scaleType="fitXY"
+                android:onClick="settings"/>
 
             <TextView
                 android:paddingLeft="5dp"
