@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:paddingTop="25dp">
+        android:paddingTop="50dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -34,13 +34,17 @@
                 android:scaleType="fitXY" />
 
             <TextView
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/rounded_text"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Profile"
                 android:textAlignment="center"
+                android:textSize="20dp"
                 android:fontFamily="sans-serif"
-                android:textColor="#FFFFFF"
+                android:textColor="#606565"
                 />
 
         </LinearLayout>
@@ -65,13 +69,17 @@
                 android:scaleType="fitXY" />
 
             <TextView
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/rounded_text"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Check-In"
                 android:textAlignment="center"
+                android:textSize="20dp"
                 android:fontFamily="sans-serif"
-                android:textColor="#FFFFFF"
+                android:textColor="#606565"
                 />
 
         </LinearLayout>
@@ -105,13 +113,17 @@
                 android:scaleType="fitXY" />
 
             <TextView
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/rounded_text"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Discussion"
                 android:textAlignment="center"
+                android:textSize="20dp"
                 android:fontFamily="sans-serif"
-                android:textColor="#FFFFFF"
+                android:textColor="#606565"
                 />
 
         </LinearLayout>
@@ -136,13 +148,17 @@
                 android:scaleType="fitXY" />
 
             <TextView
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/rounded_text"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Help"
                 android:textAlignment="center"
+                android:textSize="20dp"
                 android:fontFamily="sans-serif"
-                android:textColor="#FFFFFF"
+                android:textColor="#606565"
                 />
 
         </LinearLayout>
@@ -176,13 +192,17 @@
                 android:scaleType="fitXY" />
 
             <TextView
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/rounded_text"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Settings"
                 android:textAlignment="center"
+                android:textSize="20dp"
                 android:fontFamily="sans-serif"
-                android:textColor="#FFFFFF"
+                android:textColor="#606565"
                 />
 
         </LinearLayout>
@@ -208,13 +228,17 @@
                 android:onClick="signOut"/>
 
             <TextView
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/rounded_text"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sign Out"
                 android:textAlignment="center"
+                android:textSize="20dp"
                 android:fontFamily="sans-serif"
-                android:textColor="#FFFFFF"
+                android:textColor="#606565"
                 />
 
         </LinearLayout>

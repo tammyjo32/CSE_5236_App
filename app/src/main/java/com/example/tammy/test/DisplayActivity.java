@@ -17,16 +17,6 @@ public class DisplayActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_display);
-
-        Intent intent = getIntent();
-        String email = intent.getStringExtra("Email");
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
-        textView.setText("Hello, "+email);
-        textView.setTextColor(Color.parseColor("#FFFFFF"));
-
-        ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display);
-        layout.addView(textView);
     }
 
     public void signOut (View view) {
