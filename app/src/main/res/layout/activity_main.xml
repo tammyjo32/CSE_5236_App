@@ -22,7 +22,7 @@
             android:textSize="24dp"
             android:fontFamily="sans-serif"
             android:textAlignment="center"
-            android:layout_marginBottom="50dp"/>
+            android:layout_marginBottom="55dp"/>
 
         <EditText
             android:id="@+id/email"
@@ -53,11 +53,10 @@
             android:textColor="#ffffff"
             android:text="Forgot password?"
             android:textAlignment="textEnd"
-            android:textStyle="bold"
-            android:textSize="16dp"
             android:fontFamily="sans-serif"
             android:gravity="end"
-            android:layout_marginTop="1dp"/>
+            android:layout_marginTop="1dp"
+            android:onClick="forgotPassword"/>
 
         <Button
             android:id="@+id/sing_in_button"
@@ -77,8 +76,6 @@
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
             android:text="Don't have an account?"
-            android:textSize="16dp"
-            android:textStyle="bold"
             android:fontFamily="sans-serif"
             android:textAlignment="center"
             android:layout_marginTop="100dp" />
@@ -90,8 +87,6 @@
             android:textColor="#FF2424"
             android:text="Sign Up Here"
             android:textAlignment="center"
-            android:textSize="16dp"
-            android:textStyle="bold"
             android:fontFamily="sans-serif"
             android:layout_marginTop="0dp"
             android:onClick="signUp"/>

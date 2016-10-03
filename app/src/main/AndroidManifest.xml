@@ -17,6 +17,10 @@
         </activity>
         <activity android:name=".SignUpActivity" />
         <activity android:name=".DisplayActivity"></activity>
+
+        <activity android:name=".PopUp"
+            android:theme="@style/AppTheme.CustomTheme">
+        </activity>
     </application>
 
 </manifest>
