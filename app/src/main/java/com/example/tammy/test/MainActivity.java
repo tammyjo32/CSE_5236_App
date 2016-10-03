@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             String pass = editText1.getText().toString();
 
             String password = helper.searchPass(email);
-            
+
 
             if(pass.equals(password))
             {

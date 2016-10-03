@@ -1,6 +1,7 @@
 package com.example.tammy.test;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,7 @@ public class DisplayActivity extends AppCompatActivity {
         TextView textView = new TextView(this);
         textView.setTextSize(40);
         textView.setText("Hello, "+email);
+        textView.setTextColor(Color.parseColor("#FFFFFF"));
 
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display);
         layout.addView(textView);
