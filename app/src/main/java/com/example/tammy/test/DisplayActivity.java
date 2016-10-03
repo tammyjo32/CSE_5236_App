@@ -28,5 +28,10 @@ public class DisplayActivity extends Activity {
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display);
         layout.addView(textView);
     }
+
+    public void signOut (View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
 
