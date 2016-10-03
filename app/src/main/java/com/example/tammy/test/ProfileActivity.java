@@ -21,6 +21,8 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        setTitle("Profile");
+
         Intent intent = getIntent();
         String email = intent.getStringExtra("Email");
         String name = helper.getFirstName(email);
