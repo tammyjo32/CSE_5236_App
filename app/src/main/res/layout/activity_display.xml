@@ -18,11 +18,13 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/profile_button"
+                android:contentDescription="@string/profile_button_to_take_to_profile_activity"
                 android:layout_width="89dp"
                 android:layout_height="89dp"
                 android:layout_gravity="center"
@@ -52,11 +54,13 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/check_in_button"
+                android:contentDescription="@string/check_in_button_to_goto_check_in_activity"
                 android:layout_width="89dp"
                 android:layout_height="89dp"
                 android:layout_gravity="center"
@@ -95,12 +99,14 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
             android:orientation="vertical"
             android:layout_gravity="center_vertical"
             >
 
             <ImageButton
                 android:id="@+id/discussion_button"
+                android:contentDescription="@string/discussion_button_to_goto_discussion_activity"
                 android:layout_width="89dp"
                 android:layout_height="89dp"
                 android:layout_gravity="center"
@@ -130,11 +136,13 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/help_button"
+                android:contentDescription="@string/help_button_to_goto_help_screen"
                 android:layout_width="89dp"
                 android:layout_height="89dp"
                 android:layout_gravity="center"
@@ -152,10 +160,9 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Help"
+                android:text="@string/help"
                 android:textAlignment="center"
-                android:textSize="20dp"
-                android:fontFamily="sans-serif"
+                android:textSize="20sp"
                 android:textColor="#606565"
                 />
 
@@ -174,11 +181,13 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/settings_button"
+                android:contentDescription="@string/settings_button_to_goto_settings_screen"
                 android:layout_width="89dp"
                 android:layout_height="89dp"
                 android:src="@drawable/settings"
@@ -196,7 +205,7 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Settings"
+                android:text="@string/settings"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textColor="#606565"
@@ -208,11 +217,13 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/sign_out_button"
+                android:contentDescription="@string/sign_out_button_to_goto_sign_in_page"
                 android:layout_width="89dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -230,10 +241,9 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign Out"
+                android:text="@string/sign_out"
                 android:textAlignment="center"
-                android:textSize="20dp"
-                android:fontFamily="sans-serif"
+                android:textSize="20sp"
                 android:textColor="#606565"
                 />
 

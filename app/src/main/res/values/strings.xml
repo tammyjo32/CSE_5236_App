@@ -7,4 +7,13 @@
     <string name="check_in">Check-In</string>
     <string name="profile">Profile</string>
     <string name="discussion">Discussion</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="settings">Settings</string>
+    <string name="help">Help</string>
+    <string name="profile_button_to_take_to_profile_activity">profile button to take to profile activity</string>
+    <string name="check_in_button_to_goto_check_in_activity">check-in button to goto check-in activity</string>
+    <string name="sign_out_button_to_goto_sign_in_page">sign out button to goto sign in page</string>
+    <string name="settings_button_to_goto_settings_screen">settings button to goto settings screen</string>
+    <string name="help_button_to_goto_help_screen">help button to goto help screen</string>
+    <string name="discussion_button_to_goto_discussion_activity">discussion button to goto discussion activity</string>
 </resources>
