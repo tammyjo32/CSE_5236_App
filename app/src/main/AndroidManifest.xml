@@ -16,11 +16,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".DisplayActivity"></activity>
+        <activity android:name=".DisplayActivity" />
 
-        <activity android:name=".PopUp"
-            android:theme="@style/AppTheme.CustomTheme">
-        </activity>
+        <activity
+            android:name=".PopUp"
+            android:theme="@style/AppTheme.CustomTheme" />
+
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".CheckInActivity" />
+        <activity android:name=".DiscussionActivity" />
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".SettingsActivity"></activity>
     </application>
 
 </manifest>

@@ -20,27 +20,30 @@ public class DisplayActivity extends Activity {
     }
 
     public void profile (View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent i = getIntent();
+        String email = i.getStringExtra("Email");
+        Intent intent = new Intent(this, ProfileActivity.class);
+        intent.putExtra("Email", email);
         startActivity(intent);
     }
 
     public void checkIn (View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, CheckInActivity.class);
         startActivity(intent);
     }
 
     public void discussionBoard (View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, DiscussionActivity.class);
         startActivity(intent);
     }
 
     public void help (View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HelpActivity.class);
         startActivity(intent);
     }
 
     public void settings (View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
 
