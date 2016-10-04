@@ -50,4 +50,5 @@
     <string name="submit">SUBMIT</string>
     <string name="exit">Exit</string>
     <string name="title_activity_get_password">GetPassword</string>
+    <string name="subject">Subject</string>
 </resources>
