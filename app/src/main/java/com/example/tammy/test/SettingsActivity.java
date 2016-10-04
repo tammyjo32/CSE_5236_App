@@ -18,6 +18,9 @@ public class SettingsActivity extends AppCompatActivity {
         accountSwitch = (Switch)findViewById(R.id.media_sites_settings);
         notificationSwitch = (Switch)findViewById(R.id.discussion_notification_settings);
 
+        boolean accountSwitchState = accountSwitch.isChecked();
+        boolean notificationSwitchState = notificationSwitch.isChecked();
+
         setTitle("Settings");
     }
 }
