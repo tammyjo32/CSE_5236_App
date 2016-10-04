@@ -47,5 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void forgotPassword(View view) {
+
+        Intent intent = new Intent(this, PopUpForgotPassword.class);
+        startActivity(intent);
     }
 }

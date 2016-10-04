@@ -46,4 +46,8 @@
     <string name="social_media">SOCIAL MEDIA</string>
     <string name="social_media_sites_visibility">Social media sites visibility</string>
     <string name="edit">Edit</string>
+    <string name="enter_email">Enter email:</string>
+    <string name="submit">SUBMIT</string>
+    <string name="exit">Exit</string>
+    <string name="title_activity_get_password">GetPassword</string>
 </resources>
