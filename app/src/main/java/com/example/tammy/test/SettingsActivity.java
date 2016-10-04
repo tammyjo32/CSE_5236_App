@@ -4,8 +4,11 @@ import android.preference.PreferenceActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Switch;
+import android.widget.TextView;
 
 public class SettingsActivity extends AppCompatActivity {
+
+    private TextView switchStatus;
 
     private Switch accountSwitch;
     private Switch notificationSwitch;
