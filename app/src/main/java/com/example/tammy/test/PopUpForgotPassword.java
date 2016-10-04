@@ -15,8 +15,6 @@ import android.widget.EditText;
 
 public class PopUpForgotPassword extends AppCompatActivity {
 
-    DatabaseHelper helper = new DatabaseHelper(this);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

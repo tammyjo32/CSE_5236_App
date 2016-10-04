@@ -133,6 +133,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return b;
     }
 
+    public String getPassword(String email){
+        db = this.getReadableDatabase();
+        String query = "select email, password from " +TABLE_NAME;
+        Cursor cursor = db.rawQuery(query, null);
+        String a, b;
+        b = "not found";
+
+        if(cursor.moveToFirst()){
+            do{
+                a = cursor.getString(0);
+
+                if(a.equals(email))
+                {
+                    b = cursor.getString(1);
+                    break;
+                }
+            }
+            while(cursor.moveToNext());
+        }
+
+        return b;
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 

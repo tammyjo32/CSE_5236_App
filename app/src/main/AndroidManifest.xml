@@ -55,11 +55,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DisplayActivity" />
         </activity>
-        <activity android:name=".PopUpForgotPassword" />
+        <activity android:name=".PopUpForgotPassword"
+            android:theme="@style/AppTheme.CustomTheme" />
         <activity
             android:name=".PopUpGetPassword"
-            android:label="@string/title_activity_get_password"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.CustomTheme" />
     </application>
 
 </manifest>
