@@ -3,10 +3,14 @@ package com.example.tammy.test;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SignUpActivity extends Activity {
 
@@ -65,6 +69,11 @@ public class SignUpActivity extends Activity {
                 Toast error = Toast.makeText(SignUpActivity.this, "Email Already Registered!", Toast.LENGTH_SHORT);
                 error.show();
             }
+            else if(!emailStr.matches("[a-zA-Z0-9._-]+@[a-z]+.[a-z]+")){
+                //popup message
+                Toast error = Toast.makeText(SignUpActivity.this, "Incorrect Format for Email!", Toast.LENGTH_SHORT);
+                error.show();
+            }
             else
             {
                 //insert the details in database
@@ -86,4 +95,5 @@ public class SignUpActivity extends Activity {
 
         }
     }
+
 }
