@@ -6,7 +6,7 @@ package com.example.tammy.test;
 
 public class UserInformation {
 
-    String firstname, lastname, email, username, password;
+    String firstname, lastname, email, username, password, bio;
 
     public void setFirstname(String firstname){
         this.firstname = firstname;
@@ -47,4 +47,6 @@ public class UserInformation {
     public String getPassword(){
         return this.password;
     }
+
+
 }

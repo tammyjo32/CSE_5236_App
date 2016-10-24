@@ -10,7 +10,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.example.tammy.test.ProfileActivity">
+    tools:context="com.example.tammy.test.ProfileActivity"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,11 +35,13 @@
             android:layout_gravity="center"
             android:background="@android:color/darker_gray"/>
 
-        <TextView
+        <EditText
+            android:id="@+id/bio"
+            android:background="@android:color/transparent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/this_is_where_someone_can_put_a_bio_about_themselves_that_their_classmates_and_instructors_can_see_to_get_to_know_them"
             android:padding="20dp"
+            android:inputType="none"
             android:textColor="@android:color/black"
             android:textSize="15sp"/>
 

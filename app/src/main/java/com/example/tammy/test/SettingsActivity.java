@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private TextView switchStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +25,6 @@ public class SettingsActivity extends AppCompatActivity {
 
         final Switch accountSwitch;
         final Switch notificationSwitch;
-        Switch mySwitch;
         accountSwitch = (Switch) findViewById(R.id.media_sites_settings);
         notificationSwitch = (Switch) findViewById(R.id.discussion_notification_settings);
         accountSwitch.setOnClickListener(new Switch.OnClickListener() {
@@ -36,7 +34,7 @@ public class SettingsActivity extends AppCompatActivity {
                         .getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean(email+"accountSwitchStatus", accountSwitch.isChecked());
-                editor.commit();
+                editor.apply();
             }
         });
 
@@ -47,14 +45,14 @@ public class SettingsActivity extends AppCompatActivity {
                         .getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean(email+"notificationSwitchStatus", notificationSwitch.isChecked());
-                editor.commit();
+                editor.apply();
             }
         });
 
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(getApplicationContext());
-        accountSwitch.setChecked(sharedPreferences.getBoolean("accountSwitchStatus", false));  //default is false
-        notificationSwitch.setChecked(sharedPreferences.getBoolean("notificationSwitchStatus", false));
+        accountSwitch.setChecked(sharedPreferences.getBoolean(email+"accountSwitchStatus", false));  //default is false
+        notificationSwitch.setChecked(sharedPreferences.getBoolean(email+"notificationSwitchStatus", false));
 
     }
 }
