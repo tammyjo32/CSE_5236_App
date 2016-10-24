@@ -77,7 +77,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s)
             {
-                prefs.edit().putString(email+"bioText", s.toString()).commit();
+                prefs.edit().putString(email+"bioText", s.toString()).apply();
             }
         });
 
