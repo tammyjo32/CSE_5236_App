@@ -69,7 +69,7 @@ public class SignUpActivity extends Activity {
                 Toast error = Toast.makeText(SignUpActivity.this, "Email Already Registered!", Toast.LENGTH_SHORT);
                 error.show();
             }
-            else if(!emailStr.matches("[a-zA-Z0-9._-]+@[a-z]+.[a-z]+")){
+            else if(!isEmailValid((CharSequence)emailStr)){
                 //popup message
                 Toast error = Toast.makeText(SignUpActivity.this, "Incorrect Format for Email!", Toast.LENGTH_SHORT);
                 error.show();
@@ -95,5 +95,15 @@ public class SignUpActivity extends Activity {
 
         }
     }
+
+    private boolean isEmailValid(CharSequence emailStr) {
+        if(emailStr == null){
+            return false;
+        }else{
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(emailStr).matches();
+        }
+    }
+
+
 
 }
