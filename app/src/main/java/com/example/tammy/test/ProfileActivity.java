@@ -55,12 +55,18 @@ public class ProfileActivity extends AppCompatActivity {
         layout.addView(textView, 0);
 
         final EditText bioText = (EditText)findViewById(R.id.bio);
+        final EditText linkedInText = (EditText)findViewById(R.id.linkedIn);
+        final EditText twitterText = (EditText)findViewById(R.id.twitter);
+        final EditText emailText = (EditText)findViewById(R.id.email);
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         bioText.setText(prefs.getString(email+"bioText", "This is where you can enter a bio about yourself! Just click to edit!"));
+        linkedInText.setText(prefs.getString(email+"linkedInText", "LinkedIn profile link!"));
+        twitterText.setText(prefs.getString(email+"twitterText", "Twitter profile link!"));
+        emailText.setText(prefs.getString(email+"emailText", "Personal email address!"));
 
-
+        //save bio
         bioText.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
@@ -80,6 +86,71 @@ public class ProfileActivity extends AppCompatActivity {
                 prefs.edit().putString(email+"bioText", s.toString()).apply();
             }
         });
+
+        //save twitter link
+        twitterText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count)
+            {
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after)
+            {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+                prefs.edit().putString(email+"twitterText", s.toString()).apply();
+            }
+        });
+
+        //save linkedin link
+        linkedInText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count)
+            {
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after)
+            {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+                prefs.edit().putString(email+"linkedInText", s.toString()).apply();
+            }
+        });
+
+        //save personal email
+        emailText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count)
+            {
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after)
+            {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+                prefs.edit().putString(email+"emailText", s.toString()).apply();
+            }
+        });
+
+
 
     }
 
