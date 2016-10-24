@@ -87,7 +87,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return b;
     }
 
-    public boolean alreadyExist(String email){
+    public boolean alreadyExistEmail(String email){
         db = this.getReadableDatabase();
         String query = "select email from "+TABLE_NAME;
         Cursor cursor = db.rawQuery(query, null);
@@ -99,6 +99,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 temp = cursor.getString(0);
 
                 if(temp.equals(email))
+                {
+                    exists = true;
+                    break;
+                }
+            }
+            while(cursor.moveToNext());
+        }
+
+        return exists;
+    }
+
+    public boolean alreadyExistUsername(String username){
+        db = this.getReadableDatabase();
+        String query = "select username from "+TABLE_NAME;
+        Cursor cursor = db.rawQuery(query, null);
+        boolean exists = false;
+        String temp;
+
+        if(cursor.moveToFirst()){
+            do{
+                temp = cursor.getString(0);
+
+                if(temp.equals(username))
                 {
                     exists = true;
                     break;

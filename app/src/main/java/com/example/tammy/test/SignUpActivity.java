@@ -64,9 +64,19 @@ public class SignUpActivity extends Activity {
                 Toast error = Toast.makeText(SignUpActivity.this, "Missing Required Information!", Toast.LENGTH_SHORT);
                 error.show();
             }
-            else if(helper.alreadyExist(emailStr)){
+            else if(helper.alreadyExistEmail(emailStr)){
                 //popup message
                 Toast error = Toast.makeText(SignUpActivity.this, "Email Already Registered!", Toast.LENGTH_SHORT);
+                error.show();
+            }
+            else if(helper.alreadyExistUsername(usernameStr)){
+                //popup message
+                Toast error = Toast.makeText(SignUpActivity.this, "Username Already Taken!", Toast.LENGTH_SHORT);
+                error.show();
+            }
+            else if(!isPasswordValid((CharSequence)pass1Str)){
+                //popup message
+                Toast error = Toast.makeText(SignUpActivity.this, "Password Must Be At Least 10 Characters Long!", Toast.LENGTH_SHORT);
                 error.show();
             }
             else if(!isEmailValid((CharSequence)emailStr)){
@@ -96,11 +106,19 @@ public class SignUpActivity extends Activity {
         }
     }
 
-    private boolean isEmailValid(CharSequence emailStr) {
+    protected boolean isEmailValid(CharSequence emailStr) {
         if(emailStr == null){
             return false;
         }else{
             return android.util.Patterns.EMAIL_ADDRESS.matcher(emailStr).matches();
+        }
+    }
+
+    protected boolean isPasswordValid(CharSequence passwordStr) {
+        if(passwordStr != null && passwordStr.length() > 9){
+            return true;
+        }else{
+            return false;
         }
     }
 
