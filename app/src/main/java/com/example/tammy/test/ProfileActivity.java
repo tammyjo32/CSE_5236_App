@@ -19,6 +19,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -149,6 +150,16 @@ public class ProfileActivity extends AppCompatActivity {
                 prefs.edit().putString(email+"emailText", s.toString()).apply();
             }
         });
+
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(getApplicationContext());
+
+        if(sharedPreferences.getBoolean(email+"notificationSwitchStatus", true)){
+
+            twitterText.setVisibility(twitterText.INVISIBLE);
+            linkedInText.setVisibility(linkedInText.INVISIBLE);
+            emailText.setVisibility(emailText.INVISIBLE);
+        }
 
 
 

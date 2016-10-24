@@ -16,15 +16,15 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="375dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
         <LinearLayout
+            android:id="@+id/contentLayout"
             android:layout_width="match_parent"
             android:layout_height="375dp"
             android:background="#FFFFFF"
-            android:orientation="vertical"
-            android:layout_alignParentBottom="true">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,6 +65,7 @@
                 android:background="@android:color/darker_gray"/>
 
             <LinearLayout
+                android:id="@+id/layoutLinkedIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -88,6 +89,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layoutTwitter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -111,6 +113,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layoutEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
