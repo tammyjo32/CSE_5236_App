@@ -43,7 +43,10 @@ public class DisplayActivity extends Activity {
     }
 
     public void settings (View view) {
+        Intent i = getIntent();
+        String email = i.getStringExtra("Email");
         Intent intent = new Intent(this, SettingsActivity.class);
+        intent.putExtra("Email", email);
         startActivity(intent);
     }
 

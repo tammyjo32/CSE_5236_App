@@ -1,5 +1,6 @@
 package com.example.tammy.test;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
@@ -20,6 +21,9 @@ public class SettingsActivity extends AppCompatActivity {
 
         setTitle("Settings");
 
+        Intent intent = getIntent();
+        final String email = intent.getStringExtra("Email");
+
         final Switch accountSwitch;
         final Switch notificationSwitch;
         Switch mySwitch;
@@ -31,7 +35,7 @@ public class SettingsActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences = PreferenceManager
                         .getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("accountSwitchStatus", accountSwitch.isChecked());
+                editor.putBoolean(email+"accountSwitchStatus", accountSwitch.isChecked());
                 editor.commit();
             }
         });
@@ -42,7 +46,7 @@ public class SettingsActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences = PreferenceManager
                         .getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("notificationSwitchStatus", notificationSwitch.isChecked());
+                editor.putBoolean(email+"notificationSwitchStatus", notificationSwitch.isChecked());
                 editor.commit();
             }
         });
