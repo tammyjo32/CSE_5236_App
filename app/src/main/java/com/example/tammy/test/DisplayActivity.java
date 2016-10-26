@@ -28,7 +28,10 @@ public class DisplayActivity extends Activity {
     }
 
     public void checkIn (View view) {
+        Intent i = getIntent();
+        String email = i.getStringExtra("Email");
         Intent intent = new Intent(this, CheckInActivity.class);
+        intent.putExtra("Email", email);
         startActivity(intent);
     }
 
