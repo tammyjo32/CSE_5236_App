@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_display"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/new_back">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/profile_button"
+                android:contentDescription="@string/profile_button_to_take_to_profile_activity"
+                android:layout_width="89dp"
+                android:layout_height="89dp"
+                android:layout_gravity="center"
+                android:src="@drawable/profile"
+                android:adjustViewBounds="true"
+                android:cropToPadding="false"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerCrop"
+                android:onClick="profile" />
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/rounded_text"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profile"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textColor="#606565"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/check_in_button"
+                android:contentDescription="@string/check_in_button_to_goto_check_in_activity"
+                android:layout_width="89dp"
+                android:layout_height="89dp"
+                android:layout_gravity="center"
+                android:src="@drawable/location"
+                android:adjustViewBounds="true"
+                android:cropToPadding="false"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerCrop"
+                android:onClick="checkIn"/>
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/rounded_text"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/check_in"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textColor="#606565"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            >
+
+            <ImageButton
+                android:id="@+id/discussion_button"
+                android:contentDescription="@string/discussion_button_to_goto_discussion_activity"
+                android:layout_width="89dp"
+                android:layout_height="89dp"
+                android:layout_gravity="center"
+                android:src="@drawable/discussion"
+                android:adjustViewBounds="true"
+                android:cropToPadding="false"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerCrop"
+                android:onClick="discussionBoard"/>
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/rounded_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/discussion"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textColor="#606565"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+
+
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/help_button"
+                android:contentDescription="@string/help_button_to_goto_help_screen"
+                android:layout_width="89dp"
+                android:layout_height="89dp"
+                android:layout_gravity="center"
+                android:src="@drawable/help"
+                android:adjustViewBounds="true"
+                android:cropToPadding="false"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerCrop"
+                android:onClick="help"/>
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/rounded_text"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/help"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textColor="#606565"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/settings_button"
+                android:contentDescription="@string/settings_button_to_goto_settings_screen"
+                android:layout_width="89dp"
+                android:layout_height="89dp"
+                android:src="@drawable/settings"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:cropToPadding="false"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerCrop"
+                android:onClick="settings"/>
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/rounded_text"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textColor="#606565"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/sign_out_button"
+                android:contentDescription="@string/sign_out_button_to_goto_sign_in_page"
+                android:layout_width="89dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/signout"
+                android:adjustViewBounds="true"
+                android:cropToPadding="false"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerCrop"
+                android:onClick="signOut"/>
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/rounded_text"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_out"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textColor="#606565"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
