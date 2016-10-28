@@ -16,126 +16,139 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/contentLayout"
             android:layout_width="match_parent"
-            android:layout_height="375dp"
-            android:background="@drawable/contact_bubble"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/greetings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bio"
-                android:padding="20dp"
-                android:textColor="@android:color/black"
-                android:textSize="15sp"/>
-
-            <View
-                android:layout_width="345dp"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:background="@android:color/darker_gray"/>
-
-            <EditText
-                android:id="@+id/bio"
-                android:background="@android:color/transparent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:inputType="none"
-                android:textColor="@android:color/black"
-                android:textSize="15sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/social_media"
-                android:padding="20dp"
-                android:textColor="@android:color/black"
-                android:textSize="15sp"/>
-
-            <View
-                android:layout_width="345dp"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:background="@android:color/darker_gray"/>
+                android:textSize="40sp"
+                android:textColor="#FFFFFF"
+                android:paddingBottom="50dp"/>
 
             <LinearLayout
-                android:id="@+id/layoutLinkedIn"
+                android:id="@+id/contentLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="15dp"
-                android:paddingLeft="20dp">
+                android:layout_height="375dp"
+                android:background="@drawable/contact_bubble"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/linkedin"
-                    />
-
-                <EditText
-                    android:id="@+id/linkedIn"
-                    android:background="@android:color/transparent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="250dp"
-                    android:layout_height="50dp"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bio"
+                    android:padding="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="15sp"/>
-            </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/layoutTwitter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="20dp"
-                android:paddingTop="15dp">
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/twitter"
-                    />
+                <View
+                    android:layout_width="345dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/darker_gray"/>
 
                 <EditText
-                    android:id="@+id/twitter"
+                    android:id="@+id/bio"
                     android:background="@android:color/transparent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="250dp"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:inputType="none"
                     android:textColor="@android:color/black"
                     android:textSize="15sp"/>
-            </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/layoutEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="20dp"
-                android:paddingTop="10dp">
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/email"
-                    />
-
-                <EditText
-                    android:id="@+id/email"
-                    android:background="@android:color/transparent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="250dp"
-                    android:layout_height="50dp"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/social_media"
+                    android:padding="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="15sp"/>
-            </LinearLayout>
 
+                <View
+                    android:layout_width="345dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/darker_gray"/>
+
+                <LinearLayout
+                    android:id="@+id/layoutLinkedIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="15dp"
+                    android:paddingLeft="20dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/linkedin"
+                        />
+
+                    <EditText
+                        android:id="@+id/linkedIn"
+                        android:background="@android:color/transparent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="250dp"
+                        android:layout_height="50dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutTwitter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="15dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/twitter"
+                        />
+
+                    <EditText
+                        android:id="@+id/twitter"
+                        android:background="@android:color/transparent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="250dp"
+                        android:layout_height="50dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/email"
+                        />
+
+                    <EditText
+                        android:id="@+id/email"
+                        android:background="@android:color/transparent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="250dp"
+                        android:layout_height="50dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

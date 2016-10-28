@@ -52,13 +52,8 @@ public class ProfileActivity extends AppCompatActivity {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         String name = helper.getFirstName(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound"));
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
-        textView.setText("Hello, "+ name);
-        textView.setTextColor(Color.parseColor("#FFFFFF"));
-
-        ViewGroup layout = (ViewGroup) findViewById(R.id.activity_profile);
-        layout.addView(textView, 0);
+        TextView greetingText = (TextView)findViewById(R.id.greetings);
+        greetingText.setText("Hello, "+ name);
 
         bioText.setText(prefs.getString(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"bioText", "This is where you can enter a bio about yourself! Just click to edit!"));
         linkedInText.setText(prefs.getString(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"linkedInText", "LinkedIn profile link!"));
