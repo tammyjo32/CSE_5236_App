@@ -20,18 +20,12 @@ public class DisplayActivity extends Activity {
     }
 
     public void profile (View view) {
-        Intent i = getIntent();
-        String email = i.getStringExtra("Email");
         Intent intent = new Intent(this, ProfileActivity.class);
-        intent.putExtra("Email", email);
         startActivity(intent);
     }
 
     public void checkIn (View view) {
-        Intent i = getIntent();
-        String email = i.getStringExtra("Email");
         Intent intent = new Intent(this, CheckInActivity.class);
-        intent.putExtra("Email", email);
         startActivity(intent);
     }
 
@@ -46,10 +40,7 @@ public class DisplayActivity extends Activity {
     }
 
     public void settings (View view) {
-        Intent i = getIntent();
-        String email = i.getStringExtra("Email");
         Intent intent = new Intent(this, SettingsActivity.class);
-        intent.putExtra("Email", email);
         startActivity(intent);
     }
 

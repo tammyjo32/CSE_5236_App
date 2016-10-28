@@ -20,9 +20,6 @@ public class SettingsActivity extends AppCompatActivity {
 
         setTitle("Settings");
 
-        Intent intent = getIntent();
-        final String email = intent.getStringExtra("Email");
-
         final Switch accountSwitch;
         final Switch notificationSwitch;
         accountSwitch = (Switch) findViewById(R.id.media_sites_settings);
@@ -33,7 +30,7 @@ public class SettingsActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences = PreferenceManager
                         .getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean(email+"accountSwitchStatus", accountSwitch.isChecked());
+                editor.putBoolean(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"accountSwitchStatus", accountSwitch.isChecked());
                 editor.apply();
             }
         });
@@ -44,15 +41,15 @@ public class SettingsActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences = PreferenceManager
                         .getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean(email+"notificationSwitchStatus", notificationSwitch.isChecked());
+                editor.putBoolean(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"notificationSwitchStatus", notificationSwitch.isChecked());
                 editor.apply();
             }
         });
 
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(getApplicationContext());
-        accountSwitch.setChecked(sharedPreferences.getBoolean(email+"accountSwitchStatus", false));  //default is false
-        notificationSwitch.setChecked(sharedPreferences.getBoolean(email+"notificationSwitchStatus", false));
+        accountSwitch.setChecked(sharedPreferences.getBoolean(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"accountSwitchStatus", false));  //default is false
+        notificationSwitch.setChecked(sharedPreferences.getBoolean(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"notificationSwitchStatus", false));
 
     }
 }

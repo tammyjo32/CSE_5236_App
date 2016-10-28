@@ -43,17 +43,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         setTitle("Profile");
 
-        Intent intent = getIntent();
-        final String email = intent.getStringExtra("Email");
-        String name = helper.getFirstName(email);
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
-        textView.setText("Hello, "+name);
-        textView.setTextColor(Color.parseColor("#FFFFFF"));
-
-
-        ViewGroup layout = (ViewGroup) findViewById(R.id.activity_profile);
-        layout.addView(textView, 0);
 
         final EditText bioText = (EditText)findViewById(R.id.bio);
         final EditText linkedInText = (EditText)findViewById(R.id.linkedIn);
@@ -62,10 +51,19 @@ public class ProfileActivity extends AppCompatActivity {
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-        bioText.setText(prefs.getString(email+"bioText", "This is where you can enter a bio about yourself! Just click to edit!"));
-        linkedInText.setText(prefs.getString(email+"linkedInText", "LinkedIn profile link!"));
-        twitterText.setText(prefs.getString(email+"twitterText", "Twitter profile link!"));
-        emailText.setText(prefs.getString(email+"emailText", "Personal email address!"));
+        String name = helper.getFirstName(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound"));
+        TextView textView = new TextView(this);
+        textView.setTextSize(40);
+        textView.setText("Hello, "+ name);
+        textView.setTextColor(Color.parseColor("#FFFFFF"));
+
+        ViewGroup layout = (ViewGroup) findViewById(R.id.activity_profile);
+        layout.addView(textView, 0);
+
+        bioText.setText(prefs.getString(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"bioText", "This is where you can enter a bio about yourself! Just click to edit!"));
+        linkedInText.setText(prefs.getString(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"linkedInText", "LinkedIn profile link!"));
+        twitterText.setText(prefs.getString(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"twitterText", "Twitter profile link!"));
+        emailText.setText(prefs.getString(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"emailText", "Personal email address!"));
 
         //save bio
         bioText.addTextChangedListener(new TextWatcher() {
@@ -84,9 +82,9 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s)
             {
-                prefs.edit().putString(email+"bioText", s.toString()).apply();
+                prefs.edit().putString(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"bioText", s.toString()).apply();
             }
-        });
+    });
 
         //save twitter link
         twitterText.addTextChangedListener(new TextWatcher() {
@@ -105,7 +103,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s)
             {
-                prefs.edit().putString(email+"twitterText", s.toString()).apply();
+                prefs.edit().putString(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"twitterText", s.toString()).apply();
             }
         });
 
@@ -126,7 +124,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s)
             {
-                prefs.edit().putString(email+"linkedInText", s.toString()).apply();
+                prefs.edit().putString(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"linkedInText", s.toString()).apply();
             }
         });
 
@@ -147,18 +145,23 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s)
             {
-                prefs.edit().putString(email+"emailText", s.toString()).apply();
+                prefs.edit().putString(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"emailText", s.toString()).apply();
             }
         });
 
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(getApplicationContext());
 
-        if(sharedPreferences.getBoolean(email+"notificationSwitchStatus", true)){
+        if(sharedPreferences.getBoolean(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"accountSwitchStatus", false)){
 
-            twitterText.setVisibility(twitterText.INVISIBLE);
-            linkedInText.setVisibility(linkedInText.INVISIBLE);
-            emailText.setVisibility(emailText.INVISIBLE);
+            twitterText.setText("Visible");
+            linkedInText.setText("Visible");
+            emailText.setText("Visible");
+        }
+        else {
+            twitterText.setText("Not Visible");
+            linkedInText.setText("Not Visible");
+            emailText.setText("Not Visible");
         }
 
 

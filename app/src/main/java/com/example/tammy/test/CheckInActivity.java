@@ -18,9 +18,6 @@ public class CheckInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_in);
 
-        Intent intent = getIntent();
-        final String email = intent.getStringExtra("Email");
-
         final TextView classList = (TextView) findViewById(R.id.classList);
         final TextView instructingList = (TextView) findViewById(R.id.instructingList);
 
@@ -29,8 +26,8 @@ public class CheckInActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(getApplicationContext());
 
-        classList.setText(sharedPreferences.getString(email+"checkInClass", "You are not in any classes!"));
-        instructingList.setText(sharedPreferences.getString(email+"checkInInstruct", "You are not instructing any classes!"));
+        classList.setText(sharedPreferences.getString(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"checkInClass", "You are not in any classes!"));
+        instructingList.setText(sharedPreferences.getString(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"checkInInstruct", "You are not instructing any classes!"));
 
     }
 

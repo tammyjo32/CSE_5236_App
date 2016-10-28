@@ -1,6 +1,8 @@
 package com.example.tammy.test;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
             String password = helper.searchPass(email);
 
 
-            if(pass.equals(password))
+        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("EmailAddr", email).apply();
+
+        if(pass.equals(password))
             {
                 Intent intent = new Intent(this, DisplayActivity.class);
                 intent.putExtra("Email", email);
