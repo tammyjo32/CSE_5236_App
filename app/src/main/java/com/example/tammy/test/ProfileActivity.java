@@ -152,16 +152,16 @@ public class ProfileActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(getApplicationContext());
 
-        if(sharedPreferences.getBoolean(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"accountSwitchStatus", false)){
+        if(!sharedPreferences.getBoolean(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("EmailAddr", "defaultStringIfNothingFound")+"accountSwitchStatus", false)){
 
-            twitterText.setText("Visible");
-            linkedInText.setText("Visible");
-            emailText.setText("Visible");
-        }
-        else {
-            twitterText.setText("Not Visible");
-            linkedInText.setText("Not Visible");
-            emailText.setText("Not Visible");
+            twitterText.setVisibility(twitterText.INVISIBLE);
+            linkedInText.setVisibility(twitterText.INVISIBLE);
+            emailText.setVisibility(twitterText.INVISIBLE);
+
+        } else {
+            twitterText.setVisibility(twitterText.VISIBLE);
+            linkedInText.setVisibility(twitterText.VISIBLE);
+            emailText.setVisibility(twitterText.VISIBLE);
         }
 
 
