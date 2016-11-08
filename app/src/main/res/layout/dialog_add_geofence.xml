@@ -23,28 +23,28 @@
       android:id="@+id/fragment_add_geofence_latitude"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:inputType="number"
       android:digits="0123456789.-"
       style="@style/EditText"
-      android:hint="@string/Hint.Latitude"/>
+      android:hint="@string/Hint.Latitude"
+      android:inputType="number" />
 
 
   <EditText
       android:id="@+id/fragment_add_geofence_longitude"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:inputType="number"
       android:digits="0123456789.-"
       style="@style/EditText"
-      android:hint="@string/Hint.Longitude"/>
+      android:hint="@string/Hint.Longitude"
+      android:inputType="number" />
 
   <EditText
       android:id="@+id/fragment_add_geofence_radius"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:inputType="number"
       android:digits="0123456789."
       style="@style/EditText"
-      android:hint="@string/Hint.Radius"/>
+      android:hint="@string/Hint.Radius"
+      android:inputType="number" />
 
 </LinearLayout>
