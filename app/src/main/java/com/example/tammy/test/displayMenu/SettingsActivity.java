@@ -1,4 +1,4 @@
-package com.example.tammy.test;
+package com.example.tammy.test.displayMenu;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import com.example.tammy.test.R;
 
 public class SettingsActivity extends AppCompatActivity {
 

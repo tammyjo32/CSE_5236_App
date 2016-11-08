@@ -1,4 +1,4 @@
-package com.example.tammy.test;
+package com.example.tammy.test.DataRelated;
 
 /**
  * Created by Tammy on 10/2/16.

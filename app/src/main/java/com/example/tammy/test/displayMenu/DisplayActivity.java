@@ -1,14 +1,14 @@
-package com.example.tammy.test;
+package com.example.tammy.test.displayMenu;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.TextView;
+
+import com.example.tammy.test.R;
+import com.example.tammy.test.geofence.AllGeofencesActivity;
+import com.example.tammy.test.login_related.MainActivity;
 
 public class DisplayActivity extends Activity {
 

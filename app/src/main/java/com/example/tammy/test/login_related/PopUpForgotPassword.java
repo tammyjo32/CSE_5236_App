@@ -1,4 +1,4 @@
-package com.example.tammy.test;
+package com.example.tammy.test.login_related;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,18 +7,21 @@ import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+
+import com.example.tammy.test.R;
 
 /**
  * Created by Tammy on 10/3/16.
  */
 
-public class PopUpTermsAndConditions extends AppCompatActivity {
+public class PopUpForgotPassword extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Terms & Conditions");
-        setContentView(R.layout.pop_up_terms_and_conditions);
+        setTitle("Forgot Password?");
+        setContentView(R.layout.pop_up_forgot_password);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -36,8 +39,20 @@ public class PopUpTermsAndConditions extends AppCompatActivity {
         return true;
     }
 
+    public void submit(View view) {
+        EditText editText = (EditText)findViewById(R.id.email);
+        String email = editText.getText().toString();
+        Intent intent = new Intent(this, PopUpGetPassword.class);
+        intent.putExtra("Email", email);
+        startActivity(intent);
+
+    }
+
     public void exitPage(MenuItem item) {
-        Intent intent = new Intent(this, SignUpActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+
+
 }

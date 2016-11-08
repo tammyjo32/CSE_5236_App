@@ -1,9 +1,11 @@
-package com.example.tammy.test;
+package com.example.tammy.test.displayMenu;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.tammy.test.R;
 
 public class DiscussionActivity extends AppCompatActivity {
 

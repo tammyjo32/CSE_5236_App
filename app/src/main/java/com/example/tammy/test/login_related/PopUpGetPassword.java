@@ -1,21 +1,16 @@
-package com.example.tammy.test;
+package com.example.tammy.test.login_related;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.tammy.test.DatabaseHelper;
-import com.example.tammy.test.MainActivity;
+import com.example.tammy.test.DataRelated.DatabaseHelper;
 import com.example.tammy.test.R;
 
 public class PopUpGetPassword extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.tammy.test;
+package com.example.tammy.test.displayMenu;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,7 +9,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.example.tammy.test.R;
+import com.example.tammy.test.geofence.AllGeofencesActivity;
+
 
 public class CheckInActivity extends AppCompatActivity {
 
@@ -39,5 +41,7 @@ public class CheckInActivity extends AppCompatActivity {
     }
 
     public void editPage(MenuItem item) {
+        Intent intent = new Intent(this, AllGeofencesActivity.class);
+        startActivity(intent);
     }
 }

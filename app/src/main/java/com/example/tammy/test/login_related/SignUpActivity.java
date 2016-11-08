@@ -1,16 +1,16 @@
-package com.example.tammy.test;
+package com.example.tammy.test.login_related;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import com.example.tammy.test.DataRelated.DatabaseHelper;
+import com.example.tammy.test.R;
+import com.example.tammy.test.DataRelated.UserInformation;
 
 public class SignUpActivity extends Activity {
 
