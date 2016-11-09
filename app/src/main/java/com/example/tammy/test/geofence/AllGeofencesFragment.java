@@ -125,4 +125,6 @@ public class AllGeofencesFragment extends Fragment implements AddGeofenceFragmen
               showErrorToast();
             }
           };
+
+
 }

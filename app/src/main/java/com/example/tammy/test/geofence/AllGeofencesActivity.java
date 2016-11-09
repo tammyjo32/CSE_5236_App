@@ -1,13 +1,15 @@
 package com.example.tammy.test.geofence;
 
+import android.Manifest;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import com.example.tammy.test.R;
 
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
-public class AllGeofencesActivity extends ActionBarActivity {
+public class AllGeofencesActivity extends AppCompatActivity {
 
   // region Overrides
 
@@ -15,6 +17,8 @@ public class AllGeofencesActivity extends ActionBarActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_all_geofences);
+    ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+
 
     setTitle("Geofence");
     if (savedInstanceState == null) {

@@ -50,7 +50,6 @@ public class AddGeofenceFragment extends DialogFragment {
                 if (listener != null) {
                   listener.onDialogNegativeClick(AddGeofenceFragment.this);
                 }
-
               }
             });
 
@@ -64,6 +63,7 @@ public class AddGeofenceFragment extends DialogFragment {
 
           @Override
           public void onClick(View view) {
+            // 1. Check for valid data
             if (dataIsValid()) {
               // 2. Create a named geofence
               NamedGeofence geofence = new NamedGeofence();
@@ -157,8 +157,6 @@ public class AddGeofenceFragment extends DialogFragment {
       radiusEditText.setHint(String.format(v.getResources().getString(R.string.Hint_Radius), Constants.Geometry.MinRadius, Constants.Geometry.MaxRadius));
     }
   }
-
-
 
   // endregion
 }

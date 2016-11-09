@@ -17,16 +17,18 @@ import com.google.android.gms.location.LocationServices;
 import android.content.Intent;
 import android.app.PendingIntent;
 import com.google.android.gms.common.api.*;
-import android.util.Log;
+
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.Manifest;
+
+import com.example.tammy.test.R;
 
 
 public class GeofenceController {
 
     private final String TAG = GeofenceController.class.getName();
-    private GeofenceControllerListener listener;
-
     private Context context;
     private GoogleApiClient googleApiClient;
     private Gson gson;
@@ -41,6 +43,57 @@ public class GeofenceController {
 
     private Geofence geofenceToAdd;
     private NamedGeofence namedGeofenceToAdd;
+
+
+    private GeofenceControllerListener listener;
+    private GoogleApiClient.ConnectionCallbacks connectionAddListener =
+            new GoogleApiClient.ConnectionCallbacks() {
+                @Override
+                public void onConnected(Bundle bundle) {
+                    // 1. Create an IntentService PendingIntent
+                    Intent intent = new Intent(context, GeofenceIntentService.class);
+                    PendingIntent pendingIntent =
+                            PendingIntent.getService(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+// 2. Associate the service PendingIntent with the geofence and call addGeofences
+                    // request for permission
+
+                    PendingResult<Status> result = LocationServices.GeofencingApi.addGeofences(
+                            googleApiClient, getAddGeofencingRequest(), pendingIntent);
+
+
+
+// 3. Implement PendingResult callback
+                    result.setResultCallback(new ResultCallback<Status>() {
+
+                        @Override
+                        public void onResult(Status status) {
+                            if (status.isSuccess()) {
+                                // 4. If successful, save the geofence
+                                saveGeofence();
+                            } else {
+                                // 5. If not successful, log and send an error
+                                Log.e(TAG, "Registering geofence failed: " + status.getStatusMessage() +
+                                        " : " + status.getStatusCode());
+                                sendError();
+                            }
+                        }
+                    });
+                }
+
+                @Override
+                public void onConnectionSuspended(int i) {
+
+                }
+            };
+
+    private GoogleApiClient.OnConnectionFailedListener connectionFailedListener =
+            new GoogleApiClient.OnConnectionFailedListener() {
+                @Override
+                public void onConnectionFailed(ConnectionResult connectionResult) {
+
+                }
+            };
 
 
 
@@ -66,68 +119,6 @@ public class GeofenceController {
         void onGeofencesUpdated();
         void onError();
     }
-
-    private GoogleApiClient.ConnectionCallbacks connectionAddListener =
-            new GoogleApiClient.ConnectionCallbacks() {
-
-                @Override
-                public void onConnected(Bundle bundle) {
-                    // 1. Create an IntentService PendingIntent
-                    Intent intent = new Intent(context, GeofenceIntentService.class);
-                    PendingIntent pendingIntent =
-                            PendingIntent.getService(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-                    // 2. Associate the service PendingIntent with the geofence and call addGeofences
-                    int permissionCheck = ContextCompat.checkSelfPermission(context,
-                            Manifest.permission.ACCESS_FINE_LOCATION);
-
-                    if (permissionCheck == 0) {
-                        PendingResult<Status> result = LocationServices.GeofencingApi.addGeofences(
-                                googleApiClient, getAddGeofencingRequest(), pendingIntent);
-                        result.setResultCallback(new ResultCallback<Status>() {
-
-                            // 3. Implement PendingResult callback
-
-                            @Override
-                            public void onResult(Status status) {
-                                if (status.isSuccess()) {
-                                    // 4. If successful, save the geofence
-                                    saveGeofence();
-                                } else {
-                                    // 5. If not successful, log and send an error
-                                    Log.e(TAG, "Registering geofence failed: " + status.getStatusMessage() +
-                                            " : " + status.getStatusCode());
-                                    sendError();
-                                }
-                            }
-                        });
-                    }
-
-                }
-
-                @Override
-                public void onConnectionSuspended(int i) {
-
-                }
-            };
-
-    private GoogleApiClient.OnConnectionFailedListener connectionFailedListener =
-            new GoogleApiClient.OnConnectionFailedListener() {
-                @Override
-                public void onConnectionFailed(ConnectionResult connectionResult) {
-
-                }
-            };
-
-    public void addGeofence(NamedGeofence namedGeofence, GeofenceControllerListener listener) {
-        this.namedGeofenceToAdd = namedGeofence;
-        this.geofenceToAdd = namedGeofence.geofence();
-        this.listener = listener;
-
-        connectWithCallbacks(connectionAddListener);
-    }
-
-
 
     // helper methods
     private GeofencingRequest getAddGeofencingRequest() {
@@ -159,6 +150,14 @@ public class GeofenceController {
         if (listener != null) {
             listener.onGeofencesUpdated();
         }
+    }
+
+    public void addGeofence(NamedGeofence namedGeofence, GeofenceControllerListener listener) {
+        this.namedGeofenceToAdd = namedGeofence;
+        this.geofenceToAdd = namedGeofence.geofence();
+        this.listener = listener;
+
+        connectWithCallbacks(connectionAddListener);
     }
 
 }
