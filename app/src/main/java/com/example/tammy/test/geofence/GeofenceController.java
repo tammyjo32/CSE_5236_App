@@ -7,8 +7,12 @@ import android.content.Context;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.gson.Gson;
 import android.content.SharedPreferences;
+
+import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
+
 import com.google.android.gms.location.Geofence;
 import android.os.Bundle;
 import com.google.android.gms.common.ConnectionResult;
@@ -113,6 +117,8 @@ public class GeofenceController {
         namedGeofences = new ArrayList<>();
         namedGeofencesToRemove = new ArrayList<>();
         prefs = this.context.getSharedPreferences(Constants.SharedPrefs.Geofences, Context.MODE_PRIVATE);
+
+        loadGeofences();
     }
 
     public interface GeofenceControllerListener {
@@ -150,6 +156,12 @@ public class GeofenceController {
         if (listener != null) {
             listener.onGeofencesUpdated();
         }
+        // use Gson to convert namedGeofenceToAdd into JSON and store that JSON as a string in the
+        // users’ shared preferences
+        String json = gson.toJson(namedGeofenceToAdd);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(namedGeofenceToAdd.id, json);
+        editor.apply();
     }
 
     public void addGeofence(NamedGeofence namedGeofence, GeofenceControllerListener listener) {
@@ -159,5 +171,91 @@ public class GeofenceController {
 
         connectWithCallbacks(connectionAddListener);
     }
+
+    private void loadGeofences() {
+        // Loop over all geofence keys in prefs and add to namedGeofences
+        Map<String, ?> keys = prefs.getAll();
+        for (Map.Entry<String, ?> entry : keys.entrySet()) {
+            String jsonString = prefs.getString(entry.getKey(), null);
+            NamedGeofence namedGeofence = gson.fromJson(jsonString, NamedGeofence.class);
+            namedGeofences.add(namedGeofence);
+        }
+
+        // Sort namedGeofences by name
+        Collections.sort(namedGeofences);
+    }
+
+    // remove geofence
+    private GoogleApiClient.ConnectionCallbacks connectionRemoveListener =
+            new GoogleApiClient.ConnectionCallbacks() {
+                @Override
+                public void onConnected(Bundle bundle) {
+                    // 1. Create a list of geofences to remove
+                    List<String> removeIds = new ArrayList<>();
+                    for (NamedGeofence namedGeofence : namedGeofencesToRemove) {
+                        removeIds.add(namedGeofence.id);
+                    }
+
+                    if (removeIds.size() > 0) {
+                        // 2. Use GoogleApiClient and the GeofencingApi to remove the geofences
+                        PendingResult<Status> result = LocationServices.GeofencingApi.removeGeofences(
+                                googleApiClient, removeIds);
+                        result.setResultCallback(new ResultCallback<Status>() {
+
+                            // 3. Handle the success or failure of the PendingResult
+                            @Override
+                            public void onResult(Status status) {
+                                if (status.isSuccess()) {
+                                    removeSavedGeofences();
+                                } else {
+                                    Log.e(TAG, "Removing geofence failed: " + status.getStatusMessage());
+                                    sendError();
+                                }
+                            }
+                        });
+                    }
+                }
+
+                @Override
+                public void onConnectionSuspended(int i) {
+                    Log.e(TAG, "Connecting to GoogleApiClient suspended.");
+                    sendError();
+                }
+            };
+
+    // remove geofence helper method
+    public void removeGeofences(List<NamedGeofence> namedGeofencesToRemove,
+                                GeofenceControllerListener listener) {
+        this.namedGeofencesToRemove = namedGeofencesToRemove;
+        this.listener = listener;
+
+        connectWithCallbacks(connectionRemoveListener);
+    }
+
+    public void removeAllGeofences(GeofenceControllerListener listener) {
+        namedGeofencesToRemove = new ArrayList<>();
+        for (NamedGeofence namedGeofence : namedGeofences) {
+            namedGeofencesToRemove.add(namedGeofence);
+        }
+        this.listener = listener;
+
+        connectWithCallbacks(connectionRemoveListener);
+    }
+
+    private void removeSavedGeofences() {
+        SharedPreferences.Editor editor = prefs.edit();
+
+        for (NamedGeofence namedGeofence : namedGeofencesToRemove) {
+            int index = namedGeofences.indexOf(namedGeofence);
+            editor.remove(namedGeofence.id);
+            namedGeofences.remove(index);
+            editor.apply();
+        }
+
+        if (listener != null) {
+            listener.onGeofencesUpdated();
+        }
+    }
+
 
 }

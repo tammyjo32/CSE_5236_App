@@ -1,17 +1,23 @@
 package com.example.tammy.test.geofence;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.software.shell.fab.ActionButton;
 import com.example.tammy.test.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AllGeofencesFragment extends Fragment implements AddGeofenceFragment.AddGeofenceFragmentListener {
 
@@ -25,9 +31,12 @@ public class AllGeofencesFragment extends Fragment implements AddGeofenceFragmen
 
   private AllGeofencesAdapter allGeofencesAdapter;
 
-  // endregion
 
-  // region Overrides
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setHasOptionsMenu(true);
+  }
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -58,6 +67,15 @@ public class AllGeofencesFragment extends Fragment implements AddGeofenceFragmen
 
     allGeofencesAdapter = new AllGeofencesAdapter(GeofenceController.getInstance().getNamedGeofences());
     viewHolder.geofenceRecyclerView.setAdapter(allGeofencesAdapter);
+
+    allGeofencesAdapter.setListener(new AllGeofencesAdapter.AllGeofencesAdapterListener() {
+      @Override
+      public void onDeleteTapped(NamedGeofence namedGeofence) {
+        List<NamedGeofence> namedGeofences = new ArrayList<>();
+        namedGeofences.add(namedGeofence);
+        GeofenceController.getInstance().removeGeofences(namedGeofences, geofenceControllerListener);
+      }
+    });
     refresh();
   }
 
@@ -73,6 +91,8 @@ public class AllGeofencesFragment extends Fragment implements AddGeofenceFragmen
     } else {
       getViewHolder().emptyState.setVisibility(View.VISIBLE);
     }
+
+    getActivity().invalidateOptionsMenu();
   }
 
   private void showErrorToast() {
@@ -126,5 +146,30 @@ public class AllGeofencesFragment extends Fragment implements AddGeofenceFragmen
             }
           };
 
+
+  //  builds an AlertDialog to confirm the user wants to delete all geofence
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    int id = item.getItemId();
+    if (id == R.id.action_delete_all) {
+      AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+      builder.setMessage(R.string.AreYouSure)
+              .setPositiveButton(R.string.Yes, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                  GeofenceController.getInstance().removeAllGeofences(geofenceControllerListener);
+                }
+              })
+              .setNegativeButton(R.string.No, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                  // User cancelled the dialog
+                }
+              })
+              .create()
+              .show();
+      return true;
+    }
+
+    return super.onOptionsItemSelected(item);
+  }
 
 }

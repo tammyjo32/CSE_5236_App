@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import com.example.tammy.test.R;
 
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -42,5 +45,17 @@ public class AllGeofencesActivity extends AppCompatActivity {
     }
   }
 
-  // endregion
+  // shows a delete menu item if there are existing geofences
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    getMenuInflater().inflate(R.menu.menu_all_geofences, menu);
+
+    MenuItem item = menu.findItem(R.id.action_delete_all);
+
+    if (GeofenceController.getInstance().getNamedGeofences().size() == 0) {
+      item.setVisible(false);
+    }
+
+    return true;
+  }
 }
