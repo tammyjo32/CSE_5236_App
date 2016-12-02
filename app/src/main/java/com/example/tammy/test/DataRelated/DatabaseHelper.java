@@ -5,6 +5,15 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import java.security.SecureRandom;
+
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.spec.SecretKeySpec;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by Tammy on 10/2/16.
@@ -83,7 +92,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
             while(cursor.moveToNext());
         }
-
         return b;
     }
 
